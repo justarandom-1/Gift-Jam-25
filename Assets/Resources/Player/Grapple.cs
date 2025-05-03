@@ -38,7 +38,7 @@ public class Grapple : MonoBehaviour
 
     void reload()
     {
-        rb.velocity = new Vector2(0, 0);
+        rb.linearVelocity = new Vector2(0, 0);
         state = 0;
         transform.SetParent(parent);
         lr.enabled = false;
@@ -54,7 +54,7 @@ public class Grapple : MonoBehaviour
     {
         if(state == 0) return;
 
-        rb.velocity = dir * speed;
+        rb.linearVelocity = dir * speed;
 
         Vector2 distance = parent.position - transform.position;
 

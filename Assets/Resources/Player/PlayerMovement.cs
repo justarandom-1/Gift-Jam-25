@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movementVector = value.Get<Vector2>();
 
-        rb.velocity = movementVector * speed;
+        rb.linearVelocity = movementVector * speed;
 
 
         if(movementVector.x == 0 && movementVector.y == 0){
