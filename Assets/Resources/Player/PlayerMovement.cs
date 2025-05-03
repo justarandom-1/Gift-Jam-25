@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Vector2 movementVector;
 
     // [SerializeField] Vector2 f;
-    [SerializeField] float angle = Mathf.PI / 2;
+    [SerializeField] float angle = 90;
     [SerializeField] float range;
     private Rigidbody2D rb;
     private AudioSource audioSource;
@@ -67,8 +67,15 @@ public class PlayerMovement : MonoBehaviour
         {
             float a = rotationSpeed * Time.deltaTime;
             angle += a;
-            turret.Rotate(new Vector3(0, 0, a));
+
+            if(angle > 360) angle -= 360;
         }
+        else
+        {
+            angle = Grapple.VectorToAngle(grappleTransform.position - transform.position);
+        }
+
+        turret.rotation = Quaternion.Euler(0.0f, 0.0f, angle - 90);
 
         // MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 

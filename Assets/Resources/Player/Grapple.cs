@@ -27,8 +27,6 @@ public class Grapple : MonoBehaviour
         lr.enabled = true;
 
         dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-
-        transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
     }
 
     public void retract()
@@ -42,6 +40,10 @@ public class Grapple : MonoBehaviour
         state = 0;
         transform.SetParent(parent);
         lr.enabled = false;
+
+        transform.localEulerAngles = new Vector3(0, 0, -90);
+        transform.localPosition = new Vector3(0, 0, 0);
+
     }
 
     public int getState()
@@ -68,7 +70,7 @@ public class Grapple : MonoBehaviour
 
             dir = distance.normalized;
 
-            transform.rotation = Quaternion.Euler(0.0f, 0.0f, VectorToAngle(distance * -1));
+            transform.rotation = Quaternion.Euler(0.0f, 0.0f, VectorToAngle(distance));
         }
     }
 
