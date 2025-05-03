@@ -222,14 +222,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1032296953512564334, guid: 28c56515384542743a654cd88a7e9a35, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110603798384023354, guid: 28c56515384542743a654cd88a7e9a35, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110603798384023354, guid: 28c56515384542743a654cd88a7e9a35, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3406140612863366407, guid: 28c56515384542743a654cd88a7e9a35, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3594877616873416604, guid: 28c56515384542743a654cd88a7e9a35, type: 3}
-      propertyPath: speed
-      value: 5
+    - target: {fileID: 7478761601341035494, guid: 28c56515384542743a654cd88a7e9a35, type: 3}
+      propertyPath: m_Radius
+      value: 0.5067575
       objectReference: {fileID: 0}
+    - target: {fileID: 7478761601341035494, guid: 28c56515384542743a654cd88a7e9a35, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.31480014
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478761601341035494, guid: 28c56515384542743a654cd88a7e9a35, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.008484082
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765983686133610271, guid: 28c56515384542743a654cd88a7e9a35, type: 3}
+      propertyPath: points.Array.data[1]
+      value: 
+      objectReference: {fileID: 1488724659}
     - target: {fileID: 8910711598614440958, guid: 28c56515384542743a654cd88a7e9a35, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.20590377
@@ -275,6 +299,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28c56515384542743a654cd88a7e9a35, type: 3}
+--- !u!1 &1488724659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9218102775462881857, guid: 28c56515384542743a654cd88a7e9a35, type: 3}
+  m_PrefabInstance: {fileID: 845211067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
