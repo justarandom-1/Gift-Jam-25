@@ -6,18 +6,31 @@ public class Grapple : MonoBehaviour
 {
     [SerializeField] float speed;
 
+    [SerializeField] float range;
+
+
     private Vector2 dir = new Vector2(0, 0);
     private Transform parent;
     private Rigidbody2D rb;
     private LineRenderer lr;
     private int state = 0;
+    private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
         parent = transform.parent;
         rb = GetComponent<Rigidbody2D>();
         lr = GetComponent<LineRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
+    // void OnTriggerEnter2D (Collider2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Dog") && state != 0){
+    //         if(state == 1)
+    //             retract();
+    //     }
+    // }
 
     public void fire(float angle)
     {
@@ -60,7 +73,17 @@ public class Grapple : MonoBehaviour
 
         Vector2 distance = parent.position - transform.position;
 
-        if(state == 2)
+        
+
+        if(state == 1)
+        {
+            if(distance.magnitude > range || !spriteRenderer.isVisible)
+            {
+                retract();
+                return;
+            }
+        }
+        else
         {
             if(distance.magnitude < 0.25f)
             {
@@ -68,18 +91,9 @@ public class Grapple : MonoBehaviour
                 return;
             }
 
-            dir = distance.normalized;
+            dir = distance.normalized * 1.5f;
 
-            transform.rotation = Quaternion.Euler(0.0f, 0.0f, VectorToAngle(distance));
+            transform.rotation = Quaternion.Euler(0.0f, 0.0f, LevelManager.VectorToAngle(distance));
         }
-    }
-
-    public static float VectorToAngle(Vector2 v)
-    {
-        v.Normalize();
-        float a = Mathf.Asin(v.y) * Mathf.Rad2Deg;
-        if(v.x < 0)
-            a = 180 - a;
-        return a;
     }
 }
