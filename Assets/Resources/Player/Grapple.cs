@@ -15,6 +15,7 @@ public class Grapple : MonoBehaviour
     private LineRenderer lr;
     private int state = 0;
     private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class Grapple : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         lr = GetComponent<LineRenderer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // void OnTriggerEnter2D (Collider2D other)
@@ -40,6 +42,8 @@ public class Grapple : MonoBehaviour
         lr.enabled = true;
 
         dir = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+
+        audioSource.Play();
     }
 
     public void retract()

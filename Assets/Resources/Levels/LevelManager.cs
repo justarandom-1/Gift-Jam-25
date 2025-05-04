@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     public void updateHealth()
     {
         if(Player.instance != null){
-            float x = 357.5f - Player.instance.getHealth() * (25 + 357.5f);
+            float x = 357.5f - Player.instance.getHealth() * (35 + 357.5f);
             healthbar.offsetMin = new Vector2(x, healthbar.offsetMin.y);
             healthbar.offsetMax = new Vector2(-1 * x, healthbar.offsetMax.y);
 

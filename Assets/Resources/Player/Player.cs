@@ -12,12 +12,14 @@ public class GameEntity: MonoBehaviour
     protected Rigidbody2D rb;
     protected AudioSource audioSource;
 
+    protected SpriteRenderer spriteRenderer;
 
     protected virtual void Start()
     {
         hp = maxHP;
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public virtual void takeDamage(int dmg, bool b = true)
@@ -38,6 +40,11 @@ public class GameEntity: MonoBehaviour
     public float getHealth()
     {
         return (float) hp / maxHP;
+    }
+
+    public Vector2 getPosition()
+    {
+        return transform.position;
     }
 }
 
@@ -122,7 +129,7 @@ public class Player : GameEntity
 
             if(angle > 360) angle -= 360;
         }
-        else
+        else if((grappleTransform.position - transform.position).magnitude > 0.25f)
         {
             angle = LevelManager.VectorToAngle(grappleTransform.position - transform.position);
         }

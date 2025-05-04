@@ -2,13 +2,34 @@ using UnityEngine;
 
 public class Dog : GameEntity
 {
-    [SerializeField] int power;
+    [SerializeField] protected int power;
+
+    [SerializeField] protected float fireRate;
+    [SerializeField] protected float speed;
+    [SerializeField] protected GameObject attack;
+    protected float timer;
     protected int state = 0;
     protected Grapple grapple;
+    protected float dir;
+    protected float initialDir;
+    protected DogHP healthbar;
+    protected AudioClip fireSFX;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
     {
         base.Start();
+        timer = Random.Range(0.5f, 2);
+        initialDir = transform.localScale.x;
+
+        healthbar = transform.GetChild(0).gameObject.GetComponent<DogHP>();
+
+        fireSFX = Resources.Load<AudioClip>("SFX/firing");
+    }
+
+    public override void takeDamage(int dmg, bool b = true)
+    {
+        base.takeDamage(dmg);
+        healthbar.UpdateHP();
     }
 
     void OnTriggerEnter2D (Collider2D other)
@@ -17,16 +38,29 @@ public class Dog : GameEntity
             grapple = other.gameObject.GetComponent<Grapple>();
             if(grapple.getState() == 0)
                 return;
-            state = 2;
-            Destroy(rb);
-            transform.SetParent(other.gameObject.transform);
+
             grapple.retract();
+
+            if(hp <= 1){
+                grab();
+            }
+            else{
+                takeDamage(1);
+            }
         }
 
         if (other.gameObject.CompareTag("Player") && state != 2){
             Player.instance.hit(transform.position);
             Player.instance.takeDamage(power);
         }
+    }
+
+    protected virtual void grab()
+    {
+        state = 2;
+        Destroy(rb);
+        transform.SetParent(grapple.gameObject.transform);
+        Destroy(transform.GetChild(0).gameObject);
     }
 
     public void capture()
@@ -50,6 +84,33 @@ public class Dog : GameEntity
             //                                       incrementDistance(pos.y, 4 * Time.deltaTime),
             //                                       pos.z);
         }
+
+        if(((Vector2)transform.position - Player.instance.getPosition()).magnitude < 15)
+        {
+            if(state == 0)
+                activate();
+                
+            timer = Mathf.Max(0, timer - Time.deltaTime);
+
+            if(timer == 0){
+                timer = fireRate;
+                Attack();
+            }
+
+            Vector2 distance = Player.instance.getPosition() - (Vector2)transform.position;
+
+            rb.linearVelocity = distance.normalized * speed;
+
+            dir = Mathf.Sign(distance.x);
+
+            transform.localScale = new Vector3(dir * initialDir, transform.localScale.y, transform.localScale.z);
+        }
+        else{
+            if(state == 1)
+                deactivate();
+            
+            rb.linearVelocity = new Vector2(0, 0);
+        }
     }
 
     float incrementDistance(float x, float i)
@@ -59,5 +120,15 @@ public class Dog : GameEntity
             return Mathf.Max(x - i, 0);
         }
         return Mathf.Min(x + i, 0);
+    }
+
+    protected virtual void Attack() {}
+
+    protected virtual void activate() {
+        state = 1;
+    }
+
+    protected virtual void deactivate() {
+        state = 0;
     }
 }
