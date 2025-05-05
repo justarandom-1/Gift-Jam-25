@@ -85,7 +85,13 @@ public class Dog : GameEntity
             //                                       pos.z);
         }
 
-        if(((Vector2)transform.position - Player.instance.getPosition()).magnitude < 15)
+        Vector2 distance = Player.instance.getPosition() - (Vector2)transform.position;
+
+        dir = Mathf.Sign(distance.x);
+
+        transform.localScale = new Vector3(dir * initialDir, transform.localScale.y, transform.localScale.z);
+
+        if(distance.magnitude < 10)
         {
             if(state == 0)
                 activate();
@@ -97,13 +103,7 @@ public class Dog : GameEntity
                 Attack();
             }
 
-            Vector2 distance = Player.instance.getPosition() - (Vector2)transform.position;
-
             rb.linearVelocity = distance.normalized * speed;
-
-            dir = Mathf.Sign(distance.x);
-
-            transform.localScale = new Vector3(dir * initialDir, transform.localScale.y, transform.localScale.z);
         }
         else{
             if(state == 1)

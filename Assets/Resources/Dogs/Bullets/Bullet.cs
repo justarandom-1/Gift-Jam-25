@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] protected float timer;
     [SerializeField] protected int power;
     [SerializeField] protected float speed;
     [SerializeField] protected float curve;
@@ -13,7 +14,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] protected Vector2 direction;
     private Vector3 initialPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected virtual void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
@@ -21,16 +22,21 @@ public class Bullet : MonoBehaviour
         initialPos = transform.position;
     }
 
-    void OnTriggerEnter2D (Collider2D other)
+    protected virtual void OnTriggerEnter2D (Collider2D other)
     {
         if (other.gameObject.CompareTag("Player")){
             Player.instance.takeDamage(power);
-            Destroy(gameObject);
+            end();
         }
     }
 
+    protected virtual void end()
+    {
+        Destroy(gameObject);
+    }
+
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         transform.Rotate(new Vector3(0, 0, curve * Time.deltaTime));
 
@@ -40,7 +46,13 @@ public class Bullet : MonoBehaviour
 
         rb.linearVelocity = direction * speed;
         
-        if((transform.position - initialPos).magnitude > 15)
-            Destroy(gameObject);
+        if((transform.position - initialPos).magnitude > 25)
+            end();
+
+        if(timer > 0){
+            timer -= Time.deltaTime;
+            if(timer <= 0)
+                end();
+        }
     }
 }

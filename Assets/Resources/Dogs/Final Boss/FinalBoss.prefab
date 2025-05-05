@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 37497520175025090, guid: 5c06f8aae43ee9045bc269596c995f97, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.164913
+      value: 7.255245
       objectReference: {fileID: 0}
     - target: {fileID: 37497520175025090, guid: 5c06f8aae43ee9045bc269596c995f97, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4944624
+      value: -0.98513293
       objectReference: {fileID: 0}
     - target: {fileID: 37497520175025090, guid: 5c06f8aae43ee9045bc269596c995f97, type: 3}
       propertyPath: m_LocalPosition.z
@@ -123,5 +123,6 @@ MonoBehaviour:
   fireRate: 1.5
   speed: 0.5
   attack: {fileID: 3949154935945551931, guid: 6a677ce833ae21648bc916d3671bd5c7, type: 3}
-  swirl: {fileID: 4671210713513195584, guid: 44754f5be69aca54f85e29494da0db2b, type: 3}
   rings: {fileID: 4671210713513195584, guid: b2b305220245a5e418df82d176ad3a68, type: 3}
+  explosives: {fileID: 3407629928365271097, guid: 47682f1829fd3e64485f95ccf17d975a, type: 3}
+  spawner: {fileID: 8090927732550117383, guid: 2967b8fc27e45cd4aa00d9a20c011ed9, type: 3}

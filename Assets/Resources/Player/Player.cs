@@ -53,6 +53,11 @@ public class Player : GameEntity
     // Start is called before the first frame update
     public static Player instance;
     public static Vector2 MousePosition;
+
+    [SerializeField] Vector2 xRange;
+
+    [SerializeField] Vector2 yRange;
+
     [SerializeField] float speed;
 
     [SerializeField] float rotationSpeed;
@@ -119,9 +124,23 @@ public class Player : GameEntity
         }
     }
 
+    public Vector2 isInBoundary()
+    {
+        float a = 1;
+        
+        float b = 1;
+        if(transform.position.x < xRange[0] || transform.position.x > xRange[1])
+            a = 0;
+
+        if(transform.position.y < yRange[0] || transform.position.y > yRange[1])
+            b = 0;
+        return new Vector2(a, b);
+    }
+
     // Update is called once per frame
     void Update()
     {
+
         if(grapple.getState() == 0)
         {
             float a = rotationSpeed * Time.deltaTime;

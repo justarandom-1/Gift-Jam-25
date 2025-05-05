@@ -6,6 +6,9 @@ public class FinalBoss : Dog
     protected int mode = 0;
 
     [SerializeField] GameObject rings;
+    [SerializeField] GameObject explosives;
+
+    [SerializeField] GameObject spawner;
 
     protected int shots = 0;
 
@@ -15,7 +18,7 @@ public class FinalBoss : Dog
     void selectNextMode()
     {
         int next;
-        do{next = Random.Range(0, 3);}
+        do{next = Random.Range(0, 4);}
         while(next == mode);
 
         mode = next;
@@ -28,7 +31,7 @@ public class FinalBoss : Dog
         }
 
         shots = 0;
-        timer = Random.Range(0, fireRate);
+        timer = fireRate*1.5f;
     }
 
     protected override void Attack()
@@ -45,25 +48,59 @@ public class FinalBoss : Dog
                 audioSource.PlayOneShot(fireSFX);
                 break;
             case 1:
-                if(shots >= 5)
+                if(shots >= 15)
                 {
                     selectNextMode();
                     return;
                 }
                 else
                 {
-                    timer = 0.5f;
+                    timer = 0.4f;
                 }
 
-                Instantiate(rings, new Vector3(transform.position.x, transform.position.y, attack.transform.position.z), Quaternion.identity);
+                fireAngle = Random.Range(0, 360);
 
-                audioSource.PlayOneShot(fireSFX);
+                Instantiate(rings, new Vector3(transform.position.x, transform.position.y, attack.transform.position.z), Quaternion.Euler(0.0f, 0.0f, fireAngle));
+
+                if(shots % 2 == 0)
+                    audioSource.PlayOneShot(fireSFX);
 
                 break;
 
             case 2:
+                switch(shots)
+                {
+                    case 0:
+                        fireAngle = Random.Range(0, 360);
+                        timer = 1;
+                        break;
+                    case 1:
+                        fireAngle += 30;
+                        timer = 3;
+                        break;
+                    case 2:
+                        selectNextMode();
+                        return;
+                }
+
+                Instantiate(explosives, new Vector3(transform.position.x, transform.position.y, attack.transform.position.z), Quaternion.Euler(0.0f, 0.0f, fireAngle));
+                audioSource.PlayOneShot(fireSFX);
                 break;
             case 3:
+                switch(shots)
+                {
+                    case 0:
+                        timer = 10;
+                        break;
+                    case 1:
+                        selectNextMode();
+                        return;
+                }
+
+                fireAngle = LevelManager.VectorToAngle(Player.instance.getPosition() - (Vector2)transform.position);
+
+                Instantiate(spawner, new Vector3(transform.position.x, transform.position.y, attack.transform.position.z), Quaternion.Euler(0.0f, 0.0f, fireAngle));
+                audioSource.PlayOneShot(fireSFX);
                 break;
         }
 
