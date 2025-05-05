@@ -18,7 +18,7 @@ public class Dog : GameEntity
     protected override void Start()
     {
         base.Start();
-        timer = Random.Range(0.5f, 2);
+        timer = 1;
         initialDir = transform.localScale.x;
 
         healthbar = transform.GetChild(0).gameObject.GetComponent<DogHP>();
