@@ -1138,6 +1138,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7994568174225797287, guid: e59c9d85e0a9dc647b796a9acac7ef35, type: 3}
+      propertyPath: winScene
+      value: CutScene4
+      objectReference: {fileID: 0}
     - target: {fileID: 8499649097608962813, guid: e59c9d85e0a9dc647b796a9acac7ef35, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1

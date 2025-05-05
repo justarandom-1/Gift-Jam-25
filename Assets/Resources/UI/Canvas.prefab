@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 8539093501586264520}
   winScene: WinLevel
-  loseScene: LoseLevel
+  loseScene: Menu
 --- !u!82 &3301516006464108840
 AudioSource:
   m_ObjectHideFlags: 0

@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Gift-Jam-25.sln"
+    "dotnet.defaultSolution": "Gift Jam 25.sln"
 }
