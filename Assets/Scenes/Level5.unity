@@ -606,7 +606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9184005633617965847, guid: 28c56515384542743a654cd88a7e9a35, type: 3}
       propertyPath: xRange.x
-      value: -24
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 9184005633617965847, guid: 28c56515384542743a654cd88a7e9a35, type: 3}
       propertyPath: xRange.y
@@ -954,6 +954,10 @@ PrefabInstance:
     - target: {fileID: 351616034359066998, guid: e59c9d85e0a9dc647b796a9acac7ef35, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 916449552469691652, guid: e59c9d85e0a9dc647b796a9acac7ef35, type: 3}
+      propertyPath: m_Volume
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 916449552469691652, guid: e59c9d85e0a9dc647b796a9acac7ef35, type: 3}
       propertyPath: m_Resource
