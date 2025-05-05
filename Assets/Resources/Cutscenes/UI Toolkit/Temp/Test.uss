@@ -1,0 +1,13 @@
+.test {
+    background-image: resource('Cutscenes/sb1');
+}
+
+.test2 {
+    position: absolute;
+    top: 50%;
+    -unity-font-definition: resource('Cutscenes/KaiseiDecol-Bold');
+    font-size: 60px;
+    color: rgb(27, 215, 27);
+    -unity-paragraph-spacing: -10px;
+    letter-spacing: 5px;
+}

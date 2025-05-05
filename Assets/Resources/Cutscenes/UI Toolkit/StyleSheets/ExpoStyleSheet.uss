@@ -1,0 +1,79 @@
+VisualElement {}
+
+.narration
+{
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold; 
+    font-size: 50px;
+    -unity-font-definition: url("project://database/Assets/TextMesh%20Pro/Examples%20&%20Extras/Fonts/Electronic%20Highway%20Sign.TTF?fileID=12800000&guid=8a2b9e2a607dd2143b58c44bc32410b4&type=3#Electronic Highway Sign");
+    position: absolute;
+    width:40%;
+    white-space:normal;
+}
+
+.sb-image
+{
+    position: absolute;
+    width:40%;
+    height:60%;
+    opacity:100;
+}
+
+.i1
+{
+    top:20%;
+    left:5%;
+    background-image: resource('Cutscenes/sb1');
+}
+
+.n1
+{
+    top:20%;
+    left:55%;
+}
+
+.i2
+{
+    left:130%;
+    top:20%;
+    background-image: resource('Cutscenes/sb2');
+}
+
+.n2
+{
+    left:185%;
+    top:20%;
+}
+
+.i3
+{
+    left:150%;
+    top:170%;
+    background-image: resource('Cutscenes/sb3');
+}
+
+.n3
+{
+    left:205%;
+    top:170%;
+}
+
+.i4
+{
+    left:300%;
+    top: 170%;
+    background-image: resource('Cutscenes/sb4');
+}
+
+.n4
+{
+    left:355%;
+    top:170%;
+}
+
+.container
+{
+    position: absolute;
+    width:100%;
+    height:100%;
+}

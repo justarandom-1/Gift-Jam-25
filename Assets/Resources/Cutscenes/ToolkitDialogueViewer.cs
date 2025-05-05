@@ -38,10 +38,12 @@ public class ToolkitDialogueViewer : DialogueViewBase
     private void OnEnable()
     {
         YarnspinnerLabel.dialogueAnimationFinished+=animationFinished;
+        KeyboardListener.continueClicked+=UserRequestedViewAdvancement;
     }
     private void OnDisable()
     {
-        YarnspinnerLabel.dialogueAnimationFinished-=animationFinished;        
+        YarnspinnerLabel.dialogueAnimationFinished-=animationFinished; 
+        KeyboardListener.continueClicked-=UserRequestedViewAdvancement;       
     }
     public void animationFinished()
     {

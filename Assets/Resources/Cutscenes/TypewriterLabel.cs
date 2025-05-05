@@ -52,6 +52,17 @@ public partial class TypewriterLabel : Label
         hideText();
     }
 
+    public IEnumerator autoIncrement(Action onComplete = null)
+    {
+        while(incrementing)
+        {
+            increment();
+            yield return new WaitForSeconds(0.03f);
+        }
+        onComplete?.Invoke();
+    }
+
+
     public virtual void onAnimationFinished()
     {
         //do nothing??? idk :sob: why cant i make this an abstract class 
