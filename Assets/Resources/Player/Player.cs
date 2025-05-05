@@ -94,6 +94,13 @@ public class Player : GameEntity
             audioSource.PlayOneShot(hitSFX, 0.8f);
         base.takeDamage(dmg);
         LevelManager.instance.updateHealth();
+
+        if(hp == 0)
+        {
+            GetComponent<PlayerInput>().enabled = false;
+            rb.linearVelocity = new Vector2(0, 0);
+            LevelManager.instance.Lose();
+        }
     }
 
     void OnMove(InputValue value)
@@ -140,6 +147,8 @@ public class Player : GameEntity
     // Update is called once per frame
     void Update()
     {
+        if(hp == 0) return;
+
 
         if(grapple.getState() == 0)
         {

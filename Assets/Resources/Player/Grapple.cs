@@ -70,7 +70,7 @@ public class Grapple : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         if(state == 0) return;
 
         rb.linearVelocity = dir * speed;
