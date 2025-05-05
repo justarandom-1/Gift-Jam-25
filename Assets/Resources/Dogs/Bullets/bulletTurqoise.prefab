@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7024305809629206720, guid: 65cb09d715ec64e469f9d4c5d7771635, type: 3}
       propertyPath: m_Name
-      value: bulletTurqoise Variant
+      value: bulletTurqoise
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

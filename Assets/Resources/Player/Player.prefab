@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd499f8869b0374685c97b5cbe4cfb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 50
+  maxHP: 90
   xRange: {x: 0, y: 25}
   yRange: {x: 0, y: 21}
   speed: 3
@@ -226,7 +226,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2365407980123710776
 MonoBehaviour:
   m_ObjectHideFlags: 0

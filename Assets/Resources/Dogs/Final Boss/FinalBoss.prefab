@@ -121,7 +121,7 @@ MonoBehaviour:
   maxHP: 10
   power: 50
   fireRate: 1.5
-  speed: 0.5
+  speed: 0.4
   attack: {fileID: 3949154935945551931, guid: 6a677ce833ae21648bc916d3671bd5c7, type: 3}
   rings: {fileID: 4671210713513195584, guid: b2b305220245a5e418df82d176ad3a68, type: 3}
   explosives: {fileID: 3407629928365271097, guid: 47682f1829fd3e64485f95ccf17d975a, type: 3}

@@ -13,6 +13,10 @@ PrefabInstance:
       value: bulletRed
       objectReference: {fileID: 0}
     - target: {fileID: 3242616489956375890, guid: 15254fa11ff284e4da299f231157272e, type: 3}
+      propertyPath: power
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242616489956375890, guid: 15254fa11ff284e4da299f231157272e, type: 3}
       propertyPath: speed
       value: 2
       objectReference: {fileID: 0}

@@ -14,6 +14,7 @@ public class FinalBoss : Dog
 
     protected float fireAngle = 0;
 
+    protected GameObject largeBall;
 
     void selectNextMode()
     {
@@ -87,20 +88,18 @@ public class FinalBoss : Dog
                 audioSource.PlayOneShot(fireSFX);
                 break;
             case 3:
-                switch(shots)
-                {
-                    case 0:
-                        timer = 10;
-                        break;
-                    case 1:
-                        selectNextMode();
-                        return;
+                if(shots == 0){
+
+                    fireAngle = LevelManager.VectorToAngle(Player.instance.getPosition() - (Vector2)transform.position);
+
+                    largeBall = Instantiate(spawner, new Vector3(transform.position.x, transform.position.y, attack.transform.position.z), Quaternion.Euler(0.0f, 0.0f, fireAngle));
+                    audioSource.PlayOneShot(fireSFX);
                 }
 
-                fireAngle = LevelManager.VectorToAngle(Player.instance.getPosition() - (Vector2)transform.position);
-
-                Instantiate(spawner, new Vector3(transform.position.x, transform.position.y, attack.transform.position.z), Quaternion.Euler(0.0f, 0.0f, fireAngle));
-                audioSource.PlayOneShot(fireSFX);
+                if(largeBall == null){
+                    selectNextMode();
+                    return;
+                }
                 break;
         }
 
