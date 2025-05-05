@@ -26,7 +26,7 @@ public partial class TypewriterLabel : Label
     public void hideText()
     {
         substringLength=0;
-        text = sourceText.Substring(0, substringLength) + "<alpha=#00>"+sourceText.Substring(substringLength)+"</alpha>";
+        text = sourceText.Substring(0, substringLength) + "<alpha=#00>"+sourceText.Substring(substringLength);
         incrementing=true;
     }
 
@@ -34,7 +34,7 @@ public partial class TypewriterLabel : Label
     {
         substringLength++;
         if(substringLength<sourceText.Length)
-            text = sourceText.Substring(0, substringLength) + "<alpha=#00>"+sourceText.Substring(substringLength)+"</alpha>";
+            text = sourceText.Substring(0, substringLength) + "<alpha=#00>"+sourceText.Substring(substringLength);
         else
             displayFull();
     }

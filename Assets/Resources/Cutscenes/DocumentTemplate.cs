@@ -72,10 +72,10 @@ public abstract class DocumentTemplate : MonoBehaviour
         Debug.Log("progressed");
     }
 
-    private void transitionScene()
+    protected void transitionScene()
     {
         if(transitionsEnabled && contentCompleted)
-            root.experimental.animation.Start(1, 0, (int) fadeDuration*1000, (e, v) => e.style.opacity = new StyleFloat(v)).OnCompleted(nextSceneRequested);
+            root.experimental.animation.Start(1, 0, (int) fadeDuration*1000, (e, v) => {e.style.opacity = new StyleFloat(v); e.style.unityBackgroundImageTintColor = new Color(0, 0, 0);}).OnCompleted(nextSceneRequested);
         else if(contentCompleted)
             nextSceneRequested();
     }

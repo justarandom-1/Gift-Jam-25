@@ -41,34 +41,36 @@ VisualElement {}
 
 .n2
 {
-    left:185%;
+    left:180%;
     top:20%;
 }
 
 .i3
 {
-    left:150%;
-    top:170%;
+    left:180%;
+    top:140%;
     background-image: resource('Cutscenes/sb3');
 }
 
 .n3
 {
-    left:205%;
-    top:170%;
+    left:128%;
+    top:140%;
+    width:48.5%;
+    -unity-text-align:upper-right;
 }
 
 .i4
 {
-    left:300%;
-    top: 170%;
+    left:260%;
+    top: 140%;
     background-image: resource('Cutscenes/sb4');
 }
 
 .n4
 {
-    left:355%;
-    top:170%;
+    left:308%;
+    top:140%;
 }
 
 .container
