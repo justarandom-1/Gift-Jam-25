@@ -1,16 +1,14 @@
 using UnityEngine;
 
-public class Cutscene4 : MonoBehaviour
+public class Cutscene4 : DocumentTemplate
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void generateContent()
     {
-        
+        throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void nextSceneRequested()
     {
-        
+        throw new System.NotImplementedException();
     }
 }

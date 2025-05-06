@@ -34,10 +34,17 @@ public class OpeningScene2 : DocumentTemplate
         {
             dog.experimental.animation.Start(0, 1, 300, (e, v)=>e.style.opacity = new StyleFloat(v));
             protagonist.experimental.animation.Start(0, 1, 300, (e, v)=>e.style.opacity = new StyleFloat(v));
-            tank.experimental.animation.Start(0, 1, 300, (e, v)=>e.style.opacity = new StyleFloat(v));
+        }
+        if(nodesCompleted==2)
+        {
+            tank.experimental.animation.Start(0, 1, 300, (e, v)=>e.style.opacity = new StyleFloat(v)).OnCompleted(slowTankMove);
         }
     }
 
+    private void slowTankMove()
+    {
+        tank.experimental.animation.Start(-300, -100, 12000, (e,v)=>e.style.left=v);
+    }
 
     protected override void nextSceneRequested()
     {
