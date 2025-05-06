@@ -24,7 +24,7 @@ public class KeyboardListener : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(KeyCode.Return))
         {
-            continueClicked.Invoke();
+            continueClicked?.Invoke();
         }   
     }
 }
