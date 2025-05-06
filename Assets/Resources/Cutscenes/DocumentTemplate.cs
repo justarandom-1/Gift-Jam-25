@@ -24,7 +24,7 @@ public abstract class DocumentTemplate : MonoBehaviour
     [SerializeField]
     private StyleSheet individualStyleSheet;
 
-    public VisualElement root;
+    public VisualElement root, blackBox;
     public bool contentCompleted=false;
     
 
@@ -65,6 +65,8 @@ public abstract class DocumentTemplate : MonoBehaviour
 
         extContainer.AddToClassList("ext-container");
         document.rootVisualElement.Add(extContainer);
+        blackBox = Create("blackBox");
+        document.rootVisualElement.Add(blackBox);
 
         root = extContainer;
         generateContent();
@@ -75,7 +77,12 @@ public abstract class DocumentTemplate : MonoBehaviour
     protected void transitionScene()
     {
         if(transitionsEnabled && contentCompleted)
+        {
+            
+            blackBox.BringToFront();
+            blackBox.experimental.animation.Start(0, 1 , (int)fadeDuration*1000, (e,v) => e.style.opacity=new StyleFloat(v));
             root.experimental.animation.Start(1, 0, (int) fadeDuration*1000, (e, v) => {e.style.opacity = new StyleFloat(v); e.style.unityBackgroundImageTintColor = new Color(0, 0, 0);}).OnCompleted(nextSceneRequested);
+        }
         else if(contentCompleted)
             nextSceneRequested();
     }
@@ -107,5 +114,11 @@ public abstract class DocumentTemplate : MonoBehaviour
             ele.AddToClassList(classname);
         }
         return ele;
+    }
+
+    public void completed()
+    {
+        contentCompleted=true;
+        transitionScene();
     }
 }

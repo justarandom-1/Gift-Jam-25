@@ -1,6 +1,4 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Resources/Cutscenes/UI%20Toolkit/Temp/Test.uss?fileID=7433441132597879392&amp;guid=da12a6de16c1d495e9d047428666566a&amp;type=3#Test" />
-    <ui:VisualElement class="test" style="flex-grow: 1; -unity-background-image-tint-color: rgb(255, 255, 255); opacity: 1; letter-spacing: 4px;">
-        <ui:Label text="Click Space to Begin  &#10;hi" class="test2" style="-unity-font-definition: resource(&apos;Cutscenes/DelaGothicOne-Regular&apos;); color: rgb(76, 190, 76); font-size: 60px; -unity-font-style: bold; top: 738px; left: 561px; flex-wrap: wrap; width: 862px; height: 83px; -unity-paragraph-spacing: -10px;" />
-    </ui:VisualElement>
+    <YarnspinnerLabel class="yarnspinner spinning" style="color: rgb(253, 253, 253);" />
 </ui:UXML>

@@ -78,9 +78,22 @@ public class ToolkitDialogueViewer : DialogueViewBase
         advanceHandler = requestInterrupt;
 
         //animations here
-        currentAnimation = StartCoroutine(changedLine?.Invoke(dialogueLine.Text.Text));
+        if(changedLine==null)
+        {
+            StartCoroutine(waitForLabel(dialogueLine, onDialogueLineFinished));
+        }
+        else
+        {
+            currentAnimation = StartCoroutine(changedLine?.Invoke(dialogueLine.Text.Text));
+        }
     }
 
+    public IEnumerator waitForLabel(LocalizedLine dialogueLine, Action onDialogueLineFinished)
+    {
+        yield return new WaitUntil(()=>changedLine!=null);
+        Debug.Log("reached point");
+        currentAnimation = StartCoroutine(changedLine?.Invoke(dialogueLine.Text.Text));
+    }
    
     public override void InterruptLine(LocalizedLine dialogueLine, Action onDialogueLineFinished)
     {

@@ -48,7 +48,7 @@ public class Exposition : DocumentTemplate
 
     protected override void nextSceneRequested()
     {
-        SceneManager.LoadSceneAsync("Cutscene1");
+        SceneManager.LoadSceneAsync("OpeningScene");
     }
 
     public void zoomOut(Action onCompleted)

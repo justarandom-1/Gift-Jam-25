@@ -53,5 +53,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cutscene5.unity
     guid: 131faaa151f734b23a701df3377cf655
+  - enabled: 1
+    path: Assets/Scenes/OpeningScene.unity
+    guid: 13758918774de431daf3ecd72f279e41
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

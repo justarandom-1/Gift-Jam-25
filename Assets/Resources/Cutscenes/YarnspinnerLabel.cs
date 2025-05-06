@@ -40,6 +40,7 @@ public partial class YarnspinnerLabel : TypewriterLabel
 
     public IEnumerator newLine(string line)
     {
+        Debug.Log("new line invoked");
         setNewText(line);
         while(incrementing)
         {
