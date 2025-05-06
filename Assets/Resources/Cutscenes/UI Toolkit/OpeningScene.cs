@@ -8,6 +8,7 @@ public class OpeningScene : DocumentTemplate
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void generateContent()
     {
+        Debug.Log("Content being generated");
         VisualElement backgroundCanvas = Create("backgroundCanvas");
         YarnspinnerLabel dialogueBox = Create<YarnspinnerLabel>("DialogueBox");
         VisualElement protagonist = Create("protagonist");
@@ -21,6 +22,6 @@ public class OpeningScene : DocumentTemplate
 
     protected override void nextSceneRequested()
     {
-        SceneManager.LoadSceneAsync("Menu");
+        SceneManager.LoadSceneAsync("OpeningScene2");
     }
 }

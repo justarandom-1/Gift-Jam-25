@@ -30,6 +30,7 @@ public abstract class DocumentTemplate : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("new template opened");
         StartCoroutine(Generate());
     }
 
@@ -78,13 +79,19 @@ public abstract class DocumentTemplate : MonoBehaviour
     {
         if(transitionsEnabled && contentCompleted)
         {
-            
+            contentCompleted=false;
             blackBox.BringToFront();
             blackBox.experimental.animation.Start(0, 1 , (int)fadeDuration*1000, (e,v) => e.style.opacity=new StyleFloat(v));
-            root.experimental.animation.Start(1, 0, (int) fadeDuration*1000, (e, v) => {e.style.opacity = new StyleFloat(v); e.style.unityBackgroundImageTintColor = new Color(0, 0, 0);}).OnCompleted(nextSceneRequested);
+            root.experimental.animation.Start(1, 0, (int) fadeDuration*1000, (e, v) => {e.style.opacity = new StyleFloat(v); e.style.unityBackgroundImageTintColor = new Color(0, 0, 0);}).OnCompleted(clear);
         }
         else if(contentCompleted)
-            nextSceneRequested();
+            clear();
+    }
+
+    public void clear()
+    {
+        document.rootVisualElement.Clear();
+        nextSceneRequested();
     }
 
     //override this method to do the funny
@@ -98,6 +105,7 @@ public abstract class DocumentTemplate : MonoBehaviour
             yield return new WaitForSeconds(fadeDelay);
             root.experimental.animation.Start(0, 1, (int) fadeDuration*1000, (e, v) => e.style.opacity = new StyleFloat(v));
         }
+        Debug.Log("fade in attempted");
         yield return null;
     }
 

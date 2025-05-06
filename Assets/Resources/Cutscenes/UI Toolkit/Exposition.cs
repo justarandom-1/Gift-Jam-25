@@ -110,6 +110,7 @@ public class Exposition : DocumentTemplate
     }
     public void transition()
     {
+        Debug.Log("transition");
         contentCompleted=true;
         transitionScene();
     }

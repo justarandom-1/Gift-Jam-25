@@ -28,6 +28,7 @@
     top:10%;
     left:10%;
     background-image: resource('Cutscenes/Sprites/protagarm');
+    -unity-background-scale-mode: scale-to-fit;
 }
 .protestors
 {
@@ -37,6 +38,7 @@
     top:10%;
     left:75%;
     background-image: resource('Cutscenes/Sprites/protestors2');
+    -unity-background-scale-mode: scale-to-fit;
 }
 .dog
 {
@@ -46,6 +48,7 @@
     top:50%;
     left:35%;
     background-image: resource('Dogs/Basic Dog/dog');
+    -unity-background-scale-mode: scale-to-fit;
 }
 .tv
 {
@@ -55,6 +58,7 @@
     top:30%;
     left:40%;
     background-image: resource('Cutscenes/Sprites/tv');
+    -unity-background-scale-mode: scale-to-fit;
 }
 
 .protagonist
@@ -65,6 +69,7 @@
     top:20%;
     left:27%;
     background-image: resource('Cutscenes/Sprites/protagonistwhitehair');
+    -unity-background-scale-mode: scale-to-fit;
 }
 
 .medal
@@ -75,6 +80,7 @@
     top:20%;
     left:55%;
     background-image: resource('Cutscenes/Sprites/medalaward');
+    -unity-background-scale-mode: scale-to-fit;
 }
 
 .protagonist2
@@ -85,6 +91,7 @@
     top:10%;
     left:35%;
     background-image: resource('Cutscenes/Sprites/protageyepatch');
+    -unity-background-scale-mode: scale-to-fit;
 }
 
 
