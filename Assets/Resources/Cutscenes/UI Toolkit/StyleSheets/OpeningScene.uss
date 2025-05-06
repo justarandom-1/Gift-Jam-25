@@ -3,7 +3,7 @@
     position: absolute;
     width:100%;
     height:100%;
-    background-image: resource('Backgrounds/asmongoldroot');
+    background-image: resource('Backgrounds/asmongoldroom');
 }
 .backgroundCanvas2
 {
@@ -38,6 +38,16 @@
     top:70%;
     left:40%;
     background-image: resource('Dogs/Basic Dog/dog');
+}
+
+.tank
+{
+    position: absolute;
+    width:30%;
+    height:20%;
+    top:70%;
+    left:-22.5%;
+    background-image: resource('Cutscenes/Sprites/tank_side_profile');
 }
 
 .DialogueBox
