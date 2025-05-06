@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      militaryredo_0: 1804149087655649417
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

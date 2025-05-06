@@ -109,12 +109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c7cd27627cd1948afcc2e399709420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 2
   power: 3
-  speed: 2.5
+  speed: 3
   curve: 0
   curAngle: 0
   direction: {x: 0, y: 0}
-  timer: 2.5
   explosion: {fileID: 8168738530676311447, guid: 93102cdbae157d8469315313c8c7aec4, type: 3}
 --- !u!82 &2995920271878215842
 AudioSource:

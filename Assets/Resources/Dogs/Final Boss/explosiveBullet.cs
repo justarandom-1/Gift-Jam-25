@@ -6,7 +6,7 @@ public class explosiveBullet : Bullet
 
     protected override void end()
     {
-        Instantiate(explosion, transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0, 360)));
+        GameObject newAttack = Instantiate(explosion, transform.position, Quaternion.Euler(0.0f, 0.0f, Random.Range(0, 360)));
         GetComponent<AudioSource>().Play();
         base.end();
     }

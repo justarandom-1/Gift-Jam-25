@@ -18,21 +18,13 @@ public class FinalBoss : Dog
 
     void selectNextMode()
     {
-        int next;
-        do{next = Random.Range(0, 4);}
-        while(next == mode);
+        mode = 2 * (1 - mode / 2) + Random.Range(0, 2);
 
-        mode = next;
-
-        switch(mode)
-        {
-            case 0:
-                fireRate = 1.5f;
-                break;
-        }
+        timer = 2.25f;
 
         shots = 0;
-        timer = fireRate*1.5f;
+
+        fireRate = 1.5f;
     }
 
     protected override void Attack()
@@ -77,14 +69,17 @@ public class FinalBoss : Dog
                         break;
                     case 1:
                         fireAngle += 30;
-                        timer = 3;
+                        fireRate = 0.5f;
                         break;
-                    case 2:
-                        selectNextMode();
+                    default:
+                        timer = 1;
+                        if(largeBall == null){
+                            selectNextMode();
+                        }
                         return;
                 }
 
-                Instantiate(explosives, new Vector3(transform.position.x, transform.position.y, attack.transform.position.z), Quaternion.Euler(0.0f, 0.0f, fireAngle));
+                largeBall = Instantiate(explosives, new Vector3(transform.position.x, transform.position.y, attack.transform.position.z), Quaternion.Euler(0.0f, 0.0f, fireAngle));
                 audioSource.PlayOneShot(fireSFX);
                 break;
             case 3:
@@ -94,6 +89,8 @@ public class FinalBoss : Dog
 
                     largeBall = Instantiate(spawner, new Vector3(transform.position.x, transform.position.y, attack.transform.position.z), Quaternion.Euler(0.0f, 0.0f, fireAngle));
                     audioSource.PlayOneShot(fireSFX);
+
+                    fireRate = 0.5f;
                 }
 
                 if(largeBall == null){

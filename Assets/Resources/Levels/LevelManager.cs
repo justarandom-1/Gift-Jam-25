@@ -10,17 +10,22 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] string loseScene;
     private RectTransform healthbar;
-    private int state;
-    private AudioSource audioSource;
-    private string nextScene;
+    protected int state;
+    protected AudioSource audioSource;
+    protected string nextScene;
+    protected int maxLevel;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected virtual void Start()
     {
         instance = this;
 
-        healthbar = health.GetComponent<RectTransform>();
+        if(health != null)
+            healthbar = health.GetComponent<RectTransform>();
 
         audioSource = GetComponent<AudioSource>();
+
+        maxLevel = PlayerPrefs.GetInt("maxLevel", 0);
     }
 
     public void updateHealth()
@@ -37,6 +42,7 @@ public class LevelManager : MonoBehaviour
     public void Win()
     {
         nextScene = winScene;
+        PlayerPrefs.SetInt("maxLevel", Mathf.Max(maxLevel, SceneManager.GetActiveScene().name[5] - '0'));
         EndLevel();
     }
 
@@ -46,15 +52,15 @@ public class LevelManager : MonoBehaviour
         EndLevel();
     }
 
-    void EndLevel()
+    protected void EndLevel()
     {
         state = 2;
 
-        transform.GetChild(1).gameObject.GetComponent<Animator>().Play("fadeIn");
+        GameObject.Find("Black").GetComponent<Animator>().Play("fadeIn");
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         var allEnemies = FindObjectsByType<Dog>(FindObjectsSortMode.None);
 

@@ -39,7 +39,7 @@ public class spawnerBullet : Bullet
 
         timer -= Time.deltaTime;
 
-        if(!spriteRenderer.isVisible && timer < -8)
+        if(!spriteRenderer.isVisible && timer < -6)
         {
             end();
         }        
