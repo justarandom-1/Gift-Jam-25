@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      military_guy_recolored_0: 3874674023275077518
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

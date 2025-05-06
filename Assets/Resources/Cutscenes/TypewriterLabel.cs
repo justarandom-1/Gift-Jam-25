@@ -52,12 +52,12 @@ public partial class TypewriterLabel : Label
         hideText();
     }
 
-    public IEnumerator autoIncrement(Action onComplete = null)
+    public IEnumerator autoIncrement(Action onComplete = null, float speed = 0.03f)
     {
         while(incrementing)
         {
             increment();
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(speed);
         }
         onComplete?.Invoke();
     }

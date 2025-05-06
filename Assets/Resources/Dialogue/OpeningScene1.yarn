@@ -13,13 +13,18 @@ title: Opening2
 ---
 I just have to find my way to some sort of weaponry...
 Maybe just sneak my way through here and then...
+<<jump temp>>
+===
+
+title: temp
+---
+Oh no its one of the dogs!
+AHHHHHHHH!!!! Don't hurt me!!!!
 <<jump Opening2P2>>
 ===
 
 title: Opening2P2
 ---
-Oh no its one of the dogs!
-AHHHHHHHH!!!! Don't hurt me!!!!
 Wait, it's not even focused on me...
 It's focused on something behind me?
 Is that a tank?! And it's coming towards me?!
@@ -32,7 +37,7 @@ Is this what people mean by seeing your life flash before your eyes?
 Wait, shit! I should've at least fried my hard drive before I did this...
 ...
 I'm still alive?
-The driver got killed and now the dogs coming towards me!
+The driver got killed and now the dog is coming towards me!
 I'm not letting my life end like this!
 I haven't even seen a girl yet!
 To the tank!
