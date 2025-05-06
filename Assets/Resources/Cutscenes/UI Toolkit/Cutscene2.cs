@@ -17,6 +17,6 @@ public class Cutscene2 : DocumentTemplate
 
     protected override void nextSceneRequested()
     {
-        SceneManager.LoadSceneAsync("Level3");
+        SceneManager.LoadSceneAsync("Menu");
     }
 }
