@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      military_guy_holding_medal_0: -4429117157288439012
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

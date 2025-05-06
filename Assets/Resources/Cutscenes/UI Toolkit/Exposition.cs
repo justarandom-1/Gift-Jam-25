@@ -42,7 +42,7 @@ public class Exposition : DocumentTemplate
             narration2.setNewText("Well, sometime during the year 2027 humanity happened to discover the presence of alien dogs on the moon.");
             narration3.setNewText("What was even weirder was that they happened to in a farm… Someone was farming them. With insufficient resources to confidently investigate, humanity chose to merely spectate from a distance.");
             narration4.setNewText("But then, the unthinkable occurred. An asteroid struck the moon, causing chaos to unfold on the farm. The dogs escaped, and some of them even fled to Earth.");
-            StartCoroutine(narration.autoIncrement(animationOne));
+            StartCoroutine(narration.autoIncrement(animationOne, 0.07f));
         }
     }
 
@@ -70,7 +70,7 @@ public class Exposition : DocumentTemplate
     }
     public void animationFour()
     {
-        StartCoroutine(narration2.autoIncrement(animationFive));
+        StartCoroutine(narration2.autoIncrement(animationFive, 0.07f));
     }
     public void animationFive()
     {
@@ -87,7 +87,7 @@ public class Exposition : DocumentTemplate
     }
     public void animationEight()
     {
-        StartCoroutine(narration3.autoIncrement(animationNine));
+        StartCoroutine(narration3.autoIncrement(animationNine, 0.07f));
     }
     public void animationNine()
     {
@@ -106,7 +106,7 @@ public class Exposition : DocumentTemplate
     }
     public void animationTwelve()
     {
-        StartCoroutine(narration4.autoIncrement(transition));
+        StartCoroutine(narration4.autoIncrement(transition, 0.07f));
     }
     public void transition()
     {

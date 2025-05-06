@@ -20,6 +20,7 @@
     top:10%;
     left:35%;
     background-image: resource('Cutscenes/Sprites/protagonist1');
+    -unity-background-scale-mode: scale-to-fit;
 }
 .protagonist2
 {
@@ -29,6 +30,7 @@
     top:40%;
     left:10%;
     background-image: resource('Cutscenes/Sprites/protagonist1');
+    -unity-background-scale-mode: scale-to-fit;
 }
 .dog
 {
@@ -38,6 +40,7 @@
     top:70%;
     left:40%;
     background-image: resource('Dogs/Basic Dog/dog');
+    -unity-background-scale-mode: scale-to-fit;
 }
 
 .tank
@@ -48,6 +51,7 @@
     top:70%;
     left:-22.5%;
     background-image: resource('Cutscenes/Sprites/tank_side_profile');
+    -unity-background-scale-mode: scale-to-fit;
 }
 
 .DialogueBox
