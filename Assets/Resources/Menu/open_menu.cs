@@ -42,9 +42,11 @@ public class open_menu : LevelManager
         
         GameObject.Find("StartMenu").SetActive(false);
 
-        for(int i = maxLevel + 1; i <= 5; i++)
+        for(int i = 1; i <= 5; i++)
         {
-            GameObject.Find("Level" + i.ToString()).GetComponent<Button>().interactable = false;
+            if(i >= maxLevel + 1)
+                GameObject.Find("Level" + i.ToString()).GetComponent<Button>().interactable = false;
+            GameObject.Find("Level" + i.ToString()).GetComponent<Image>().alphaHitTestMinimumThreshold = 0.5f;
         }
 
 
