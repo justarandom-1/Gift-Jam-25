@@ -21,6 +21,6 @@ public class OpeningScene : DocumentTemplate
 
     protected override void nextSceneRequested()
     {
-        SceneManager.LoadSceneAsync("OpeningScene2");
+        SceneManager.LoadSceneAsync("Menu");
     }
 }

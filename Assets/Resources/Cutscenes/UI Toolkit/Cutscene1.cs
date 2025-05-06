@@ -22,7 +22,7 @@ public class Cutscene1 : DocumentTemplate
 
     protected override void nextSceneRequested()
     {
-        SceneManager.LoadSceneAsync("Level2");
+        SceneManager.LoadSceneAsync("Menu");
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

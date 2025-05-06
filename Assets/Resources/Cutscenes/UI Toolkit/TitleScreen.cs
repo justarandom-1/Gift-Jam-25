@@ -16,7 +16,7 @@ public class TitleScreen : DocumentTemplate
         glowingText = Create<Label>("glowing-text");
         title = Create<Label>("title");
         glowingText.text = "Click space to begin";
-        title.text = "外国人\n強制退去";
+        title.text = "外星人";
 
         root.Add(backgroundCanvas);
         backgroundCanvas.Add(runningDog);
