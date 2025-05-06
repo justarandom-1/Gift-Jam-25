@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
     public void Win()
     {
         nextScene = winScene;
-        PlayerPrefs.SetInt("maxLevel", Mathf.Max(maxLevel, SceneManager.GetActiveScene().name[5] - '0'));
+        PlayerPrefs.SetInt("maxLevel", Mathf.Max(maxLevel, SceneManager.GetActiveScene().name[5] - '0' + 1));
         EndLevel();
     }
 
